@@ -80,23 +80,37 @@
   <section id="portfolio" class="section section-light">
     <div class="container">
       <h2>Portfolio</h2>
-      <p class="section-intro">Proprietary platforms and thought leadership built to solve real-world workforce and career challenges.</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3><a href="https://recruiterbuddy.net" target="_blank" rel="noopener noreferrer">RecruiterBuddy</a></h3>
-          <p>Your 24/7 AI-powered recruiting partner. Automates resume screening, interview question generation, candidate comparisons, and submission document preparation — integrated with SmartRecruiters and Airtable.</p>
-          <span class="card-tag">AI &middot; Automation &middot; Recruiting</span>
+      <p class="section-intro">Proprietary platforms, advisory engagements, and thought leadership built to solve real-world workforce and care challenges.</p>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn carousel-prev" aria-label="Previous">&#8592;</button>
+        <div class="carousel-track">
+          <div class="card">
+            <h3><a href="https://recruiterbuddy.net" target="_blank" rel="noopener noreferrer">RecruiterBuddy</a></h3>
+            <p>Your 24/7 AI-powered recruiting partner. Automates resume screening, interview question generation, candidate comparisons, and submission document preparation — integrated with SmartRecruiters and Airtable.</p>
+            <span class="card-tag">AI &middot; Automation &middot; Recruiting</span>
+          </div>
+          <div class="card">
+            <h3><a href="https://careertilt.com" target="_blank" rel="noopener noreferrer">CareerTilt</a></h3>
+            <p>A 5-week Job Search Accelerator combining expert coaching with practical assignments. Helps professionals optimize their online presence, master interview technique, and build a winning job search strategy.</p>
+            <span class="card-tag">Career Development &middot; Coaching</span>
+          </div>
+          <div class="card">
+            <h3><a href="https://limitlesstalent.xyz" target="_blank" rel="noopener noreferrer">Limitless Talent</a></h3>
+            <p>A newsletter pushing the known boundaries of the Future of Work — thought leadership for practitioners and leaders navigating the Exponential Age of human achievement.</p>
+            <span class="card-tag">Thought Leadership &middot; Future of Work</span>
+          </div>
+          <div class="card">
+            <h3>Enterprise Mental Health Strategy</h3>
+            <p>Cross-sector initiative leadership focused on transforming mental health and substance use systems locally and nationally. Stewarded high-impact partnerships, advised on philanthropic funding strategy, and aligned investments with measurable outcomes in equity, prevention, and access to care — in partnership with the Huntsman Family Foundation.</p>
+            <span class="card-tag">Strategy &middot; Systems Design &middot; Philanthropy</span>
+          </div>
+          <div class="card">
+            <h3>Mental Health Clinic Advisory</h3>
+            <p>Executive advisory and strategy for a growing behavioral health startup (Grace Therapy and Healing) during a critical phase of operational scaling. Rebuilt core infrastructure resulting in a 3x increase in office utilization within 90 days, while strengthening inclusive hiring systems, leadership development, and cultural alignment.</p>
+            <span class="card-tag">Executive Advisory &middot; Healthcare &middot; Operations</span>
+          </div>
         </div>
-        <div class="card">
-          <h3><a href="https://careertilt.com" target="_blank" rel="noopener noreferrer">CareerTilt</a></h3>
-          <p>A 5-week Job Search Accelerator combining expert coaching with practical assignments. Helps professionals optimize their online presence, master interview technique, and build a winning job search strategy.</p>
-          <span class="card-tag">Career Development &middot; Coaching</span>
-        </div>
-        <div class="card">
-          <h3><a href="https://limitlesstalent.xyz" target="_blank" rel="noopener noreferrer">Limitless Talent</a></h3>
-          <p>A newsletter pushing the known boundaries of the Future of Work — thought leadership for practitioners and leaders navigating the Exponential Age of human achievement.</p>
-          <span class="card-tag">Thought Leadership &middot; Future of Work</span>
-        </div>
+        <button class="carousel-btn carousel-next" aria-label="Next">&#8594;</button>
       </div>
     </div>
   </section>
@@ -142,5 +156,15 @@
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+      const track = wrapper.querySelector('.carousel-track');
+      const prev = wrapper.querySelector('.carousel-prev');
+      const next = wrapper.querySelector('.carousel-next');
+      const scrollAmount = () => track.querySelector('.card').offsetWidth + 24;
+      prev.addEventListener('click', () => track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
+      next.addEventListener('click', () => track.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
+    });
+  </script>
 </body>
 </html>

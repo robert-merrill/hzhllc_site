@@ -328,6 +328,63 @@ address {
   color: rgba(255,255,255,0.45);
 }
 
+/* ── Carousel ── */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 0.25rem;
+}
+
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.carousel-track .card {
+  flex: 0 0 calc(33.333% - 1rem);
+  scroll-snap-align: start;
+  min-width: 260px;
+}
+
+.carousel-btn {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--navy);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  z-index: 1;
+}
+
+.carousel-btn:hover {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .carousel-track .card { flex: 0 0 calc(50% - 0.75rem); }
+}
+
+@media (max-width: 640px) {
+  .carousel-track .card { flex: 0 0 85%; }
+}
+
 /* ── Legal pages ── */
 .legal-body { padding: 4rem 0 6rem; }
 .legal-body h1 { font-size: 2rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
