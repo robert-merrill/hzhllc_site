@@ -141,30 +141,24 @@ body {
 .principals-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-rows: auto auto 1fr auto;
+  column-gap: 2rem;
 }
 
 .principal {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
   border-left: 3px solid var(--accent);
   padding-left: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  row-gap: 0.5rem;
 }
 
 .principal h3 {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--navy);
-}
-
-.principal h3 a {
-  color: var(--navy);
-  text-decoration: none;
-}
-
-.principal h3 a:hover {
-  color: var(--accent);
+  align-self: start;
 }
 
 .principal-title {
@@ -172,14 +166,21 @@ body {
   color: var(--accent);
   font-weight: 600;
   letter-spacing: 0.03em;
-  margin-bottom: 0.25rem;
+  align-self: start;
 }
 
 .principal p {
   color: #4a5568;
   font-size: 0.95rem;
   line-height: 1.8;
-  flex: 1;
+  align-self: start;
+}
+
+.principal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-self: start;
 }
 
 .principal-link {
@@ -188,7 +189,6 @@ body {
   font-weight: 600;
   color: var(--accent);
   text-decoration: none;
-  margin-top: 0.5rem;
 }
 
 .principal-link:hover {
@@ -402,8 +402,22 @@ address {
 }
 
 @media (max-width: 640px) {
-  .grid-3, .grid-2, .contact-grid, .principals-grid {
+  .grid-3, .grid-2, .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .principals-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .principal {
+    grid-template-rows: none;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
   }
 
   .nav { gap: 1.2rem; }
