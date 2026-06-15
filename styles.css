@@ -133,22 +133,29 @@ body {
 .about-text {
   font-size: 1.05rem;
   color: #4a5568;
-  max-width: 720px;
+  max-width: 100%;
   line-height: 1.85;
   margin-bottom: 2.5rem;
+}
+
+.principals-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
 .principal {
   border-left: 3px solid var(--accent);
   padding-left: 1.5rem;
-  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .principal h3 {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 0.2rem;
 }
 
 .principal h3 a {
@@ -165,13 +172,27 @@ body {
   color: var(--accent);
   font-weight: 600;
   letter-spacing: 0.03em;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .principal p {
   color: #4a5568;
   font-size: 0.95rem;
   line-height: 1.8;
+  flex: 1;
+}
+
+.principal-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.principal-link:hover {
+  text-decoration: underline;
 }
 
 /* ── Grids ── */
@@ -324,7 +345,7 @@ address {
 }
 
 @media (max-width: 640px) {
-  .grid-3, .grid-2, .contact-grid {
+  .grid-3, .grid-2, .contact-grid, .principals-grid {
     grid-template-columns: 1fr;
   }
 
