@@ -130,6 +130,51 @@ body {
 }
 
 /* ── About ── */
+.about-tagline {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: -1.75rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.bio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-self: start;
+}
+
+.bio-group p {
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.accordion-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font);
+  text-align: left;
+}
+
+.accordion-toggle:hover .toggle-label {
+  text-decoration: underline;
+}
+
+.accordion-content {
+  padding-top: 0.25rem;
+}
+
 .about-text {
   font-size: 1.05rem;
   color: #4a5568;
@@ -169,7 +214,7 @@ body {
   align-self: start;
 }
 
-.principal p {
+.principal > p {
   color: #4a5568;
   font-size: 0.95rem;
   line-height: 1.8;
