@@ -27,11 +27,21 @@ hzhllc_site/
 |---|---|
 | Header (sticky) | HZH, LLC wordmark + nav (About, Services, Portfolio, Contact) |
 | Hero | Headline, subheadline, "Get in Touch" CTA → #contact |
-| About | Company description + Robert Merrill principal bio (links to rahhb.xyz) |
-| Services | Talent & Recruiting · Software Innovation · Strategic Partnerships |
-| Portfolio | RecruiterBuddy · CareerTilt · Limitless Talent (all live links) |
+| About | Firm narrative + two principal bios (Celeste Merrill, Robert Merrill) with accordion full backgrounds |
+| Services | Strategic Partnerships · Talent & Recruiting · Software Innovation |
+| Portfolio | Enterprise Mental Health Strategy · RecruiterBuddy · Mental Health Clinic Advisory · TextDrop Buddy · Limitless Talent |
 | Contact | Email · Phone · Business Hours · Address |
 | Footer | HZH, LLC tagline · Privacy Policy · Terms of Service · Copyright |
+
+### Principals
+
+**Celeste Merrill** — Founder & Principal  
+Strategic Initiatives Lead at Vibrant Emotional Health. Former Managing Director, Huntsman Family Foundation. Mental health strategy, philanthropy, cross-sector partnership.  
+LinkedIn: https://www.linkedin.com/in/celeste-merrill
+
+**Robert Merrill** — Co-Founder & Managing Member  
+Talent Futurist. Fortune 100 to seed-stage startups, 15+ countries. Bootstrapped fractional recruiting firm $0–$1.5MM ARR. Expertise in ATS/CRM, AI automation, hyper-scale hiring.  
+LinkedIn: https://www.linkedin.com/in/robertmerrill/
 
 ### Contact Info
 - **Email:** info@hzhllc.com
@@ -41,7 +51,6 @@ hzhllc_site/
 
 ### Portfolio Links
 - **RecruiterBuddy** → https://recruiterbuddy.net
-- **CareerTilt** → https://careertilt.com
 - **Limitless Talent** → https://limitlesstalent.xyz
 
 ---
@@ -101,8 +110,9 @@ Enrollment ID: **VTQMCY3QR8**
 
 ### What was built to address this
 - Full single-page site with substantive content in every section
-- Named principal (Robert Merrill) with professional bio
-- Three live portfolio products with working links
+- Two named principals (Celeste Merrill, Robert Merrill) with professional bios and LinkedIn links
+- Live portfolio products with working links (RecruiterBuddy, Limitless Talent)
+- Named enterprise partnerships (Vibrant Emotional Health, Huntsman Mental Health Institute, Huntsman Family Foundation)
 - Business hours, phone, full address in contact section
 - Functional Privacy Policy and Terms of Service pages (9 sections each, Utah governing law)
 - No placeholder content, no dead links, no "coming soon" text
@@ -110,18 +120,18 @@ Enrollment ID: **VTQMCY3QR8**
 
 ### Remaining checklist before resubmitting
 
-- [ ] **Switch nameservers in Hover** to Netlify DNS (above)
+- [x] **Switch nameservers in Hover** to Netlify DNS
 - [ ] **Disable WHOIS privacy** on hzhllc.com in Hover — Apple's automated system checks that the registrant name matches the legal entity. With privacy on, it sees a proxy instead of "HZH, LLC."
 - [ ] **Verify D-U-N-S record** at https://dnb.com — name must be exactly `HZH, LLC` (same punctuation), address and Key Principal must match enrollment submission
-- [ ] **Wait 2 weeks** from site launch before resubmitting — Apple's systems cache domain checks; immediate resubmission after a prior rejection often fails even with a fixed site
+- [ ] **Wait ~2 weeks** from site launch before resubmitting — Apple's systems cache domain checks; immediate resubmission after a prior rejection often fails even with a fixed site
 - [ ] **Use info@hzhllc.com** (not a personal email) as the Apple ID for enrollment
 - [ ] **Keep phone available** (801-228-0529) — Apple may call to verbally verify enrollment
 
 ### Why the site now qualifies
 Apple's "minimal content" rejection is a safeguard against shell entities. The site now demonstrates a real operating business through:
-- A named principal with verifiable credentials
-- Three live proprietary products with working URLs
-- Named enterprise partnerships (Vibrant Emotional Health, Huntsman Mental Health Institute)
+- Two named principals with verifiable credentials and LinkedIn profiles
+- Live proprietary products with working URLs
+- Named enterprise partnerships with real organizations
 - A physical Salt Lake City address, business phone, and business hours
 - Professional legal pages with Utah governing law
 
@@ -129,56 +139,12 @@ Apple's "minimal content" rejection is a safeguard against shell entities. The s
 
 ## Design Reference
 
-For recreating in Carrd or another platform, key design decisions:
-
 - **Color palette:** Navy `#0d1b2a` (header/hero/footer) · Accent blue `#2d6cdf` · Light gray `#f5f7fa` (alternate sections) · White `#ffffff`
 - **Typography:** System font stack (`system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI'`) — zero external dependencies
 - **Layout:** Max-width 1100px centered container, 2rem horizontal padding
-- **Grid:** CSS Grid, 3-column for services/portfolio, collapses to 2-col at 900px and 1-col at 640px
+- **Grid:** CSS Grid, 3-column for services, collapses to 2-col at 900px and 1-col at 640px
+- **About section:** 2-column CSS subgrid (`grid-template-rows: subgrid`) so name, title, bio, and links align across both principals
+- **Accordion:** `hidden` attribute toggled by JS, `aria-expanded` for accessibility. Default view shows condensed blurb; "[+] View Full Background" expands full bio.
+- **Portfolio:** Horizontal scroll carousel with arrow buttons, 3 cards visible at once (2 at 900px, 1 at 640px)
 - **Hero:** Dark navy background, `clamp(2rem, 5vw, 3.2rem)` responsive headline
 - **Cards:** White background, `1px solid #e0e4ea` border, `8px` border-radius, `2rem` padding
-
----
-
-## AI Prompt for Recreation
-
-To recreate or extend this site using an AI tool, use this prompt:
-
-```
-Build a professional single-page HTML/CSS website for HZH, LLC (hzhllc.com),
-a Utah-based strategic consulting and software firm.
-
-Design: Minimalist, professional. Dark navy (#0d1b2a) header/hero/footer,
-white body, light gray (#f5f7fa) alternate sections, accent blue (#2d6cdf).
-System font stack. No external CSS frameworks or font CDNs.
-
-Pages needed: index.html, privacy.html, terms.html, plus a favicon.svg.
-
-Sections (in order):
-1. Sticky header — "HZH, LLC" wordmark left, nav links right (About, Services, Portfolio, Contact)
-2. Hero — H1: "Strategic Consulting & Software Innovation." Subhead: "HZH, LLC bridges the gap between high-level human capital strategy and custom, automated software solutions." CTA button "Get in Touch" linking to #contact
-3. About — Company description + principal bio for Robert Merrill (Founder & Principal, link to https://rahhb.xyz/). Bio: Talent Futurist, Senior Director Global Talent Acquisition, 15+ countries, bootstrapped fractional recruiting firm $0–$1.5MM ARR, expertise in ATS/CRM, AI automation, hyper-scale hiring
-4. Services (3-column grid cards):
-   - Talent & Recruiting: enterprise talent acquisition, RecOps, ATS/CRM optimization, hyper-scale growth hiring
-   - Software Innovation: proprietary tools including RecruiterBuddy, AI-driven automation, API integrations
-   - Strategic Partnerships: Vibrant Emotional Health, Huntsman Mental Health Institute
-5. Portfolio (3-column grid cards with live links):
-   - RecruiterBuddy (https://recruiterbuddy.net) — 24/7 AI recruiting partner, automates resume screening, interview questions, candidate comparisons. Integrated with SmartRecruiters and Airtable.
-   - CareerTilt (https://careertilt.com) — 5-week Job Search Accelerator, expert coaching, online presence optimization, interview technique
-   - Limitless Talent (https://limitlesstalent.xyz) — Substack newsletter on Future of Work, thought leadership for the Exponential Age
-6. Contact (3-column):
-   - Email: info@hzhllc.com (mailto link) · Phone: 801-228-0529 (tel link)
-   - Business Hours: Monday–Friday, 9:00 AM – 5:00 PM MT
-   - Address: 299 S Main St Suite 1300 PMB 95478, Salt Lake City, UT 84111-1919
-7. Footer — "HZH, LLC" brand + tagline "Strategic consulting & software innovation." · Privacy Policy (/privacy) · Terms of Service (/terms) · © 2026 HZH, LLC. All rights reserved.
-
-Legal pages: Privacy Policy and Terms of Service with 9 sections each,
-effective January 1, 2026, governed by Utah law / Salt Lake County courts.
-Both pages share the same header/nav/footer as index.html.
-Contact block on each legal page: info@hzhllc.com · 801-228-0529 · full address.
-
-Also create netlify.toml with redirects from /privacy → /privacy.html
-and /terms → /terms.html (status 200).
-
-No dead links. No placeholder content. No "coming soon" text.
-```
